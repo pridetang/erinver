@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인천적십자병원 응급실 안내</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .card-header {
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .card-header:hover {
+            background-color: #f9fafb;
+        }
+        .card-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+            padding: 0 1.5rem;
+        }
+        .card-content.open {
+            max-height: 1000px; /* 충분히 큰 값으로 설정 */
+            padding: 1.5rem 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="container mx-auto max-w-2xl p-4">
+
+        <!-- Header -->
+        <header class="text-center mb-6 py-4">
+            <i class="fas fa-hospital-user text-5xl text-red-600 mb-2"></i>
+            <h1 class="text-3xl font-bold text-gray-800">인천 적십자 병원 응급의료기관</h1>
+            <p class="text-gray-600 mt-1">여러분의 빠른 쾌유를 바라며 최선을 다하겠습니다.</p>
+        </header>
+
+        <!-- Main ER Guide Notice -->
+        <div class="bg-white p-5 rounded-lg shadow-md mb-6 border-l-4 border-red-500">
+            <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                <i class="fas fa-bullhorn text-red-500 mr-3"></i>응급실 이용 전 확인해주세요
+            </h2>
+            <div class="space-y-2 text-gray-700 leading-relaxed">
+                <p>안녕하세요 인천 적십자병원입니다.</p>
+                <p>저희 응급실은 <strong class="text-red-600">선착순이 아닌 환자의 중증도에 따라 진료 순서가 결정</strong>됩니다.</p>
+                <p>이에 따라 대기 시간이 발생할 수 있으며, 의료진의 판단 후 필요한 검사가 진행됩니다.</p>
+                <p>환자분의 안전과 신속한 진료를 위해 최선을 다하겠습니다.</p>
+            </div>
+        </div>
+
+        <!-- Main Guide Sections -->
+        <div class="space-y-4">
+            <!-- Section 1: ER Procedure -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div id="card-header-1" class="card-header p-5 flex justify-between items-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-clipboard-list text-2xl text-red-600 mr-4"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">응급실 이용 절차</h3>
+                    </div>
+                    <i id="arrow-1" class="fas fa-chevron-down transform transition-transform"></i>
+                </div>
+                <div id="card-content-1" class="card-content">
+                    <ol class="relative border-l border-gray-200 ml-3">
+                        <li class="mb-6 ml-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white">1</span>
+                            <h4 class="font-semibold text-gray-900">접수 및 분류</h4>
+                            <p class="text-sm text-gray-600">응급실 도착 후 원무 창구에서 접수합니다.<br>간호사가 환자의 상태를 파악하여 중증도를 분류(KTAS)합니다.</p>
+                        </li>
+                        <li class="mb-6 ml-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white">2</span>
+                            <h4 class="font-semibold text-gray-900">진료 및 검사</h4>
+                            <p class="text-sm text-gray-600">분류된 중증도에 따라 의사 진료가 시작됩니다.<br>의료진이 필요하다고 판단 시 혈액검사, X-ray, CT 등 정밀 검사를 시행합니다.</p>
+                        </li>
+                        <li class="mb-6 ml-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white">3</span>
+                            <h4 class="font-semibold text-gray-900">결과 확인 및 처치</h4>
+                            <p class="text-sm text-gray-600">검사 결과는 약 2시간 정도 소요될 수 있으며, 상황에 따라 시간은 변경될 수 있습니다.<br>결과를 바탕으로 의료진이 환자의 상태를 설명하고 필요한 응급 처치를 시행합니다.</p>
+                        </li>
+                        <li class="ml-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white">4</span>
+                            <h4 class="font-semibold text-gray-900">귀가 또는 입원 결정</h4>
+                            <p class="text-sm text-gray-600">진료 및 처치 후, 상태에 따라 퇴실 또는 입원(수술)을 결정합니다.<br>퇴실 시에는 약을 처방받고 수납합니다.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Section 2: What to Bring -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div id="card-header-2" class="card-header p-5 flex justify-between items-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-briefcase-medical text-2xl text-red-600 mr-4"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">내원 시 준비물</h3>
+                    </div>
+                    <i id="arrow-2" class="fas fa-chevron-down transform transition-transform"></i>
+                </div>
+                <div id="card-content-2" class="card-content">
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span><strong class="font-semibold">신분증 또는 건강보험증</strong><br>정확한 환자 확인을 위해 필요합니다.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span><strong class="font-semibold">복용 중인 약 처방전</strong><br>현재 복용 중인 약물 정보를 알려주시면 진료에 큰 도움이 됩니다.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span><strong class="font-semibold">과거 진료 기록</strong><br>타 병원 진료 기록이나 소견서가 있다면 지참해주세요.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span><strong class="font-semibold">보호자 연락처</strong><br>응급 상황 시 연락할 수 있는 보호자 연락처를 준비해주세요.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section 3: Patient Transport -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div id="card-header-3" class="card-header p-5 flex justify-between items-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-route text-2xl text-red-600 mr-4"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">환자 이동 안내</h3>
+                    </div>
+                    <i id="arrow-3" class="fas fa-chevron-down transform transition-transform"></i>
+                </div>
+                <div id="card-content-3" class="card-content">
+                    <div class="mb-4 p-4 bg-green-50 border-l-4 border-green-400 rounded-r-lg">
+                        <h4 class="font-bold text-green-800 mb-2">✅ 스스로 이동이 가능한 경우</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                            <li>이동 전, 의료진에게 목적지를 먼저 확인해주세요.</li>
+                            <li>낙상 위험에 주의하며 천천히 이동해주세요.</li>
+                            <li>병원 벽면에 있는 안내 표지판을 참고하시면 편리합니다.</li>
+                        </ul>
+                    </div>
+                    <div class="p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r-lg">
+                        <h4 class="font-bold text-amber-800 mb-2">🆘 이동에 도움이 필요한 경우</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                            <li>거동이 불편하면 즉시 의료진에게 알려주세요.</li>
+                            <li>보호자 또는 의료진이 안전하게 동행합니다.</li>
+                            <li class="font-bold text-red-600">안전을 위해 절대 혼자 이동하지 마세요.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Triage (KTAS) -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div id="card-header-4" class="card-header p-5 flex justify-between items-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-heart-pulse text-2xl text-red-600 mr-4"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">환자 중증도 분류 (KTAS) 안내</h3>
+                    </div>
+                    <i id="arrow-4" class="fas fa-chevron-down transform transition-transform"></i>
+                </div>
+                <div id="card-content-4" class="card-content">
+                    <p class="text-sm text-gray-600 mb-4">응급실은 도착 순서가 아닌, 환자의 위급한 정도에 따라 진료 순서가 정해집니다. 이는 생명이 위급한 환자를 먼저 치료하기 위함이니 너른 양해 부탁드립니다.</p>
+                    <div class="space-y-3">
+                        <div class="p-3 rounded-md bg-red-100 border border-red-300"><strong class="text-red-700">KTAS 1등급 (소생)</strong>: 심정지, 호흡정지 등 즉각적인 처치가 필요한 최응급 환자</div>
+                        <div class="p-3 rounded-md bg-orange-100 border border-orange-300"><strong class="text-orange-700">KTAS 2등급 (긴급)</strong>: 호흡곤란, 심한 출혈 등 신속한 처치가 필요한 응급 환자</div>
+                        <div class="p-3 rounded-md bg-yellow-100 border border-yellow-300"><strong class="text-yellow-700">KTAS 3등급 (응급)</strong>: 응급 처치가 필요하나, 상태가 안정될 수 있는 환자</div>
+                        <div class="p-3 rounded-md bg-green-100 border border-green-300"><strong class="text-green-700">KTAS 4등급 (준응급)</strong>: 수 시간 내 처치가 필요한 환자</div>
+                        <div class="p-3 rounded-md bg-gray-200 border border-gray-300"><strong class="text-gray-700">KTAS 5등급 (비응급)</strong>: 응급도가 낮아 대기 시간이 길어질 수 있는 환자</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: FAQ -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div id="card-header-5" class="card-header p-5 flex justify-between items-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-question-circle text-2xl text-red-600 mr-4"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">자주 묻는 질문 (FAQ)</h3>
+                    </div>
+                    <i id="arrow-5" class="fas fa-chevron-down transform transition-transform"></i>
+                </div>
+                <div id="card-content-5" class="card-content divide-y">
+                     <div class="py-3">
+                        <h4 class="font-semibold text-gray-800">Q. 왜 저보다 늦게 온 환자가 먼저 진료받나요?</h4>
+                        <p class="text-sm text-gray-600 mt-1">A. 응급실은 위에서 설명드린 중증도 분류(KTAS)에 따라 생명이 위급한 환자를 우선으로 진료합니다. 양해 부탁드립니다.</p>
+                    </div>
+                    <div class="py-3">
+                        <h4 class="font-semibold text-gray-800">Q. 진료 대기 중에 음식을 먹거나 물을 마셔도 되나요?</h4>
+                        <p class="text-sm text-gray-600 mt-1">A. 정확한 진단과 응급 시술(수술)을 위해 금식이 필요할 수 있습니다. 의료진에게 먼저 문의해주세요.</p>
+                    </div>
+                    <div class="py-3">
+                        <h4 class="font-semibold text-gray-800">Q. 보호자는 몇 명까지 들어올 수 있나요?</h4>
+                        <p class="text-sm text-gray-600 mt-1">A. 감염 예방과 원활한 진료 환경을 위해 보호자는 환자 당 1인으로 제한하고 있습니다. 협조에 감사드립니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-2 gap-4 mt-8">
+            <a href="tel:032-899-4119" class="bg-red-600 text-white flex flex-col items-center justify-center p-4 rounded-lg shadow-md hover:bg-red-700 transition-colors">
+                <i class="fas fa-phone-volume text-2xl mb-2"></i>
+                <span class="font-semibold">응급실 전화연결</span>
+                <span class="text-sm">(032-899-4119)</span>
+            </a>
+            <a href="https://map.kakao.com/?q=인천적십자병원 응급실" target="_blank" class="bg-blue-500 text-white flex flex-col items-center justify-center p-4 rounded-lg shadow-md hover:bg-blue-600 transition-colors">
+                <i class="fas fa-map-location-dot text-2xl mb-2"></i>
+                <span class="font-semibold">병원 위치 보기</span>
+                 <span class="text-sm">(카카오맵)</span>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center mt-8 py-4">
+            <p class="text-sm text-gray-500">&copy; 2025 인천적십자병원. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Accordion (Collapsible) functionality
+        const headers = document.querySelectorAll('.card-header');
+        headers.forEach(header => {
+            header.addEventListener('click', () => {
+                // Correctly generate content and arrow IDs from the header ID
+                const contentId = header.id.replace('card-header', 'card-content');
+                const arrowId = header.id.replace('card-header', 'arrow');
+                
+                const content = document.getElementById(contentId);
+                const arrow = document.getElementById(arrowId);
+
+                // If elements don't exist, do nothing to prevent errors.
+                if (!content || !arrow) {
+                    console.error('Could not find content or arrow for header:', header.id);
+                    return;
+                }
+
+                const isOpening = !content.classList.contains('open');
+
+                // Close all other open cards
+                document.querySelectorAll('.card-content.open').forEach(openContent => {
+                    openContent.classList.remove('open');
+                    const openArrowId = openContent.id.replace('card-content', 'arrow');
+                    const openArrow = document.getElementById(openArrowId);
+                    if (openArrow) {
+                        openArrow.classList.remove('rotate-180');
+                    }
+                });
+                
+                // If we are opening a new card, toggle its state
+                if (isOpening) {
+                    content.classList.add('open');
+                    arrow.classList.add('rotate-180');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
